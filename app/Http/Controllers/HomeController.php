@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CarController extends Controller
+class HomeController extends Controller
 {
     public function index()
     {
-        return'Index method from CarController';
+        return 'index';
     }
 }
