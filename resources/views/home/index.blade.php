@@ -3,7 +3,12 @@
 @section('title', 'Home page')
 
 @section('content')
-    <x-card>
+    @php
+        $color = 'red';
+        $bgColor = 'blue';
+    @endphp
+    <x-card :$color :$bgColor>
+{{--    <x-card :color="$color" :bgColor="$bgColor">--}}
         <x-slot:title>Card title 1</x-slot>
         Card Content 1
         <x-slot:footer>Card footer 1</x-slot>
