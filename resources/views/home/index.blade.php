@@ -7,7 +7,7 @@
         $color = 'red';
         $bgColor = 'blue';
     @endphp
-    <x-card :$color :$bgColor>
+    <x-card :$color :$bgColor class="card-rounded">
 {{--    <x-card :color="$color" :bgColor="$bgColor">--}}
         <x-slot:title>Card title 1</x-slot>
         Card Content 1

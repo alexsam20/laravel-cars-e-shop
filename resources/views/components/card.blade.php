@@ -1,5 +1,8 @@
 @props(['color', 'bgColor' => 'white'])
-<div class="card card-text-{{ $color }} card-bg-{{ $bgColor }}">
+
+<div {{ $attributes
+        ->merge(['lang' => 'es'])
+        ->class("card card-text-$color card-bg-$bgColor") }}>
     <div class="card-header">{{ $title }}</div>
     @if($slot->isEmpty())
         <p>Please provide some content</p>
