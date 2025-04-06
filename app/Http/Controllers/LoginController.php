@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LoginComtroller extends Controller
+class LoginController extends Controller
 {
     public function create()
     {
