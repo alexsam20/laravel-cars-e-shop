@@ -19,13 +19,13 @@ class HomeController extends Controller
 
 //        $car = Car::find(3);
 
-        $car = Car::where('published_at', "!=", null)
-            ->where('user_id', 1)
-            ->orderBy('published_at', 'desc')
-            ->limit(2)
-            ->get();
-
-        dump($car);
+//        $car = Car::where('published_at', "!=", null)
+//            ->where('user_id', 1)
+//            ->orderBy('published_at', 'desc')
+//            ->limit(2)
+//            ->get();
+//
+//        dump($car);
         return view('home.index');
     }
 }
