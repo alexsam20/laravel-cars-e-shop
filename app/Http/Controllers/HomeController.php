@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Car;
+use App\Models\CarFeatures;
 use App\Models\FuelType;
 use App\Models\Maker;
 
@@ -10,22 +11,35 @@ class HomeController extends Controller
 {
     public function index()
     {
-        // Challenge: Rewrite all Cars records where th price is greater than $20 000
-        $cars = Car::where('price', '>', 20000)->get();
-        dump($cars);
+//        $car = Car::find(1);
+//        dump($car->features, $car->primaryImage);
 
-        // Challenge: Fetch the Maker details where the Maker name is 'Toyota'
-        $maker = Maker::where('name', 'Toyota')->first();
-        dump($maker);
+//        $car->features->abc = 0;
+//        $car->features->save();
 
-        // Challenge: Insert a new FuelType with the name 'Hydrogen'
-        FuelType::create(['name' => 'Hydrogen']);
+//        $car->features->update(['abc'=> 0]);
+//        $car->primaryImage->delete();
 
-        // Challenge: Update the price of the Car with id 1 to $15 000
-        Car::where('id', 1)->update(['price' => 15000]);
+        $car = Car::find(11);
 
-        // Challenge: Delete all Car records where the year is before 2020
-        Car::where('year', '<', 2020)->delete();
+        $carFeatures = new CarFeatures([
+            'abc' => false,
+            'air_conditioning' => false,
+            'power_windows' => false,
+            'power_door_locks' => false,
+            'cruise_control' => false,
+            'bluetooth_connectivity' => false,
+            'remote_start' => false,
+            'gps_navigation' => false,
+            'heated_seats' => false,
+            'climate_control' => false,
+            'rear_parking_sensor' => false,
+            'leather_seats' => false,
+        ]);
+
+        $car->features()->save($carFeatures);
+
+
         return view('home.index');
     }
 }
