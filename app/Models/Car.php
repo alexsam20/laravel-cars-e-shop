@@ -36,6 +36,7 @@ class Car extends Model
     public function primaryImage(): HasOne
     {
         return $this->hasOne(CarImage::class)
+//            ->latestOfMany('position');
             ->oldestOfMany('position');
     }
 
