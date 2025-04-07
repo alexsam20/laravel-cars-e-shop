@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Car;
 use App\Models\CarFeatures;
 use App\Models\CarImage;
+use App\Models\CarType;
 use App\Models\FuelType;
 use App\Models\Maker;
 
@@ -40,7 +41,7 @@ class HomeController extends Controller
 
 //        $car->features()->save($carFeatures);
 
-        $car = Car::find(1);
+//        $car = Car::find(1);
 
         // Create new image
 //        $image = new CarImage(['image_path' => 'me_folder/my_subfolder/myy_file', 'position' => 2]);
@@ -48,15 +49,32 @@ class HomeController extends Controller
 
 //        $car->images()->create(['image_path' => 'folder/subfolder/file', 'position' => 3]);
 
-        $car->images()->saveMany([
+        /*$car->images()->saveMany([
             new CarImage(['image_path' => 'folder2/subfolder2/file2', 'position' => 4]),
             new CarImage(['image_path' => 'folder3/subfolder3/file3', 'position' => 5]),
-        ]);
+        ]);*/
 
-        $car->images()->createMany([
+        /*$car->images()->createMany([
             ['image_path' => 'folder4/subfolder4/file4', 'position' => 6],
             ['image_path' => 'folder5/subfolder5/file5', 'position' => 7],
-        ]);
+        ]);*/
+
+        $car = Car::find(1);
+//        dump($car->carType);
+
+        $carType = CarType::where('name', 'Sedan')->first();
+//        dump($carType->cars);
+        /**
+         *  $cars = Car::whereBelongsTo($carType)->get();
+         *  same
+         *  $carType->cars
+         */
+
+//        $car->car_type_id = $carType->id;
+//        $car->save();
+
+        $car->carType()->associate($carType);
+        $car->save();
 
         return view('home.index');
     }
