@@ -15,13 +15,16 @@ class HomeController extends Controller
 {
     public function index()
     {
+//        User::factory()
+//            ->count(10)
+////            ->unverified()
+//            ->trashed()
+//            ->create();
+
         User::factory()
-            ->count(10)
-//            ->sequence(
-//                ['name' => 'Piter'],
-//                ['name' => 'John'],
-//            )
-            ->sequence(fn (Sequence $sequence) => ['name' => 'Name ' . $sequence->index])
+            ->afterCreating(function (User $user) {
+                dump($user);
+            })
             ->create();
 
         return view('home.index');
