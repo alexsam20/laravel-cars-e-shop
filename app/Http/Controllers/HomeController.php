@@ -8,6 +8,7 @@ use App\Models\CarImage;
 use App\Models\CarType;
 use App\Models\FuelType;
 use App\Models\Maker;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -59,10 +60,10 @@ class HomeController extends Controller
             ['image_path' => 'folder5/subfolder5/file5', 'position' => 7],
         ]);*/
 
-        $car = Car::find(1);
+//        $car = Car::find(1);
 //        dump($car->carType);
 
-        $carType = CarType::where('name', 'Sedan')->first();
+//        $carType = CarType::where('name', 'Sedan')->first();
 //        dump($carType->cars);
         /**
          *  $cars = Car::whereBelongsTo($carType)->get();
@@ -73,8 +74,22 @@ class HomeController extends Controller
 //        $car->car_type_id = $carType->id;
 //        $car->save();
 
-        $car->carType()->associate($carType);
-        $car->save();
+//        $car->carType()->associate($carType);
+//        $car->save();
+
+//        $car = Car::find(1);
+//        dump($car->favouredUsers);
+
+//        $user = User::find(1);
+//        dump($user->favouriteCars);
+
+        $user = User::find(1);
+//        $user->favouriteCars()->attach([1, 2]); // Add
+
+//        $user->favouriteCars()->sync([3]); // Delete and Add
+
+//        $user->favouriteCars()->detach([1, 2]);
+        $user->favouriteCars()->detach();
 
         return view('home.index');
     }
