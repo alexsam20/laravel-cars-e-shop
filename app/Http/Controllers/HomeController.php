@@ -74,9 +74,25 @@ class HomeController extends Controller
 //            })
 //            ->create();
 
-        Maker::factory()
+        /*Maker::factory()
             ->count(1)
             ->has(Model::factory()->count(3))
+            ->create();*/
+
+        /*Model::factory()
+            ->count(2)
+            ->forMaker(['name' => 'Lexus']) // Relations maker() Model Model
+            ->create();*/
+
+        /*Model::factory()
+            ->count(2)
+            ->for(Maker::factory()->state(['name' => 'GSM']))
+            ->create();*/
+
+        $maker = Maker::factory()->create();
+        Model::factory()
+            ->count(3)
+            ->for($maker)
             ->create();
 
         return view('home.index');
