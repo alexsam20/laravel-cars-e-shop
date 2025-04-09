@@ -16,93 +16,11 @@ class HomeController extends Controller
 {
     public function index()
     {
-//        $makers = Maker::factory()->count(10)->create();
-//        dd($makers);
+        $cars = Car::where('published_at', '<', now())
+            ->orderBy('published_at', 'desc')
+            ->limit(30)
+            ->get();
 
-//        User::factory()->count(10)->create([
-//            'name' => 'Alexandr S Sam',
-//        ]);
-
-        /*User::factory()
-            ->count(10)
-            ->state([
-                'name' => 'AlexSaM'
-            ])
-            ->create();*/
-
-//        User::factory()
-//            ->count(10)
-//            ->sequence(
-//                ['name' => 'Piter'],
-//                ['name' => 'John'],
-//            )
-//
-
-//        User::factory()
-//            ->count(10)
-////            ->unverified()
-//            ->trashed()
-//            ->create();
-
-//        User::factory()
-//            ->afterCreating(function (User $user) {
-//                dump($user);
-//            })
-//            ->create();
-
-//        Maker::factory()
-//            ->count(5)
-//            ->hasModels(5) // Relations models() Maker Model
-//            ->create();
-
-//        Maker::factory()
-//            ->count(1)
-//            ->hasModels(1, ['name' => 'Test']) // Relations models() Maker Model
-//            ->create();
-
-//        User::factory()
-//            ->count(1)
-//            ->hasCars(1, function (array $attributes, User $user) {
-//                return ['phone' => $user->phone];
-//            })
-//            ->create();
-
-//        Maker::factory()
-//            ->count(1)
-//            ->hasModels(1, function (array $attributes, Maker $maker) {
-//                return [];
-//            })
-//            ->create();
-
-        /*Maker::factory()
-            ->count(1)
-            ->has(Model::factory()->count(3))
-            ->create();*/
-
-        /*Model::factory()
-            ->count(2)
-            ->forMaker(['name' => 'Lexus']) // Relations maker() Model Model
-            ->create();
-
-        Model::factory()
-            ->count(2)
-            ->for(Maker::factory()->state(['name' => 'GSM']))
-            ->create();*/
-
-        /*$maker = Maker::factory()->create();
-        Model::factory()
-            ->count(3)
-            ->for($maker)
-            ->create();*/
-
-        /*User::factory()
-            ->has(Car::factory()->count(5), 'favouriteCars')
-            ->create();
-
-        User::factory()
-            ->hasAttached(Car::factory()->count(5), ['col1' => 'val1'], 'favouriteCars')
-            ->create();*/
-
-        return view('home.index');
+        return view('home.index', compact('cars'));
     }
 }
