@@ -20,7 +20,7 @@ class HomeController extends Controller
 //        dd($makers);
 
 //        User::factory()->count(10)->create([
-//            'name' => 'Alexandr S Samciuc',
+//            'name' => 'Alexandr S Sam',
 //        ]);
 
         /*User::factory()
