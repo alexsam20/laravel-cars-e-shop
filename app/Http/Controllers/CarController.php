@@ -17,7 +17,17 @@ class CarController extends Controller
             ->cars()
             ->with(['primaryImage', 'maker', 'model'])
             ->orderBy('created_at', 'desc')
-            ->simplePaginate(15);
+            ->paginate(5)
+            // http://127.0.0.1:8000/car?page=2
+//            ->withPath('/user/cars')
+            // http://127.0.0.1:8000/user/cars?page=2
+//            ->appends(['sort' => 'price'])
+//            ->withQueryString()
+            // http://127.0.0.1:8000/car?sort=price&page=3
+//            ->fragment('cars')
+            // http://127.0.0.1:8000/car?page=3#cars
+        ;
+
         return view('car.index', compact('cars'));
     }
 
