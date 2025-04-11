@@ -75,25 +75,20 @@ class CarController extends Controller
             ->with(['primaryImage', 'city', 'carType', 'fuelType', 'maker', 'model'])
             ->orderBy('published_at', 'desc');
 
-        $query->leftJoin('cities', 'cities.id', '=', 'cars.city_id')
-            ->join('car_types', 'car_types.id', '=', 'cars.car_type_id')
-            ->where('cities.state_id', 5)
-            ->where('car_types.name', 'Sedan');
+        $cars = $query->paginate(5);
 
-//        $query->select('cars.*', 'cities.name as city_name');
+//        $query->leftJoin('cities', 'cities.id', '=', 'cars.city_id')
+//            ->join('car_types', 'car_types.id', '=', 'cars.car_type_id')
+//            ->where('cities.state_id', 5)
+//            ->where('car_types.name', 'Sedan');
 
-        $carCount = $query->count();
 
-        $cars = $query->limit(30)->get();
 
-//        dd($cars[0]);
-
-        return view('car.search', compact('cars', 'carCount'));
+        return view('car.search', compact('cars'));
     }
 
     public function watchlist()
     {
-        // TODO you come back this
         $cars = User::find(4)
             ->favouriteCars()
             ->with(['primaryImage', 'city', 'carType', 'fuelType', 'maker', 'model'])
