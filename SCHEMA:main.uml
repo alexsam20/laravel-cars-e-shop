@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>a92b03e4-d9db-44ce-a8a2-9d87006dfa47.SCHEMA:main</OriginalElement>
+  <nodes>
+    <node x="617.2979508196722" y="1300.5327868852462">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.makers</node>
+    <node x="2162.6590163934425" y="1179.6016393442624">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cache_locks</node>
+    <node x="94.3360655737705" y="27.821311475409857">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.users</node>
+    <node x="2219.0459016393443" y="1731.2016393442623">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cache</node>
+    <node x="2149.281967213115" y="1452.5327868852455">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.sqlite_master</node>
+    <node x="1788.9967213114755" y="1560.877049180328">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.password_reset_tokens</node>
+    <node x="1266.5229508196724" y="894.1721311475408">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.fuel_types</node>
+    <node x="381.91065573770493" y="654.1721311475408">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cars</node>
+    <node x="1480.2967213114755" y="1533.155737704918">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.jobs</node>
+    <node x="1825.4967213114755" y="1354.472131147541">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.sqlite_sequence</node>
+    <node x="1618.4475409836068" y="1902.683606557377">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.failed_jobs</node>
+    <node x="425.54713114754077" y="125.03114754098362">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.favourite_cars</node>
+    <node x="899.1606557377052" y="1039.5852459016394">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.models</node>
+    <node x="991.2639344262298" y="140.03114754098362">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.states</node>
+    <node x="-306.7327868852459" y="102.82131147540986">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.sessions</node>
+    <node x="991.2639344262298" y="392.683606557377">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cities</node>
+    <node x="1935.24262295082" y="1845.870491803279">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.job_batches</node>
+    <node x="2219.5459016393443" y="1950.870491803279">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.migrations</node>
+    <node x="-315.58688524590195" y="769.1065573770488">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.car_features</node>
+    <node x="342.3663934426228" y="1514.709836065574">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.car_images</node>
+    <node x="704.2885245901643" y="140.03114754098362">a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.car_types</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.sessions" target="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.users" relationship="REFERENCES">
+      <point x="0.0" y="-113.5" />
+      <point x="-205.2327868852459" y="216.32131147540986" />
+      <point x="222.8360655737705" y="216.32131147540986" />
+      <point x="0.0" y="188.5" />
+    </edge>
+    <edge source="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cars" target="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.car_types" relationship="REFERENCES">
+      <point x="-55.25" y="-293.5" />
+      <point x="437.16065573770493" y="790.8032786885246" />
+      <point x="778.7885245901643" y="790.8032786885246" />
+      <point x="0.0" y="53.5" />
+    </edge>
+    <edge source="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cities" target="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.states" relationship="REFERENCES">
+      <point x="0.0" y="-68.5" />
+      <point x="1074.7639344262298" y="268.4311475409836" />
+      <point x="1065.7639344262298" y="268.4311475409836" />
+      <point x="0.0" y="53.5" />
+    </edge>
+    <edge source="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.car_features" target="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cars" relationship="REFERENCES">
+      <point x="0.0" y="-218.5" />
+      <point x="-161.58688524590195" y="1033.1426229508195" />
+      <point x="492.41065573770493" y="1033.1426229508195" />
+      <point x="0.0" y="293.5" />
+    </edge>
+    <edge source="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.favourite_cars" target="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.users" relationship="REFERENCES">
+      <point x="-47.75" y="-68.5" />
+      <point x="473.29713114754077" y="200.05901639344273" />
+      <point x="222.8360655737705" y="200.05901639344273" />
+      <point x="0.0" y="188.5" />
+    </edge>
+    <edge source="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cars" target="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.users" relationship="REFERENCES">
+      <point x="-92.08333333333331" y="-293.5" />
+      <point x="400.3273224043716" y="520.0" />
+      <point x="222.8360655737705" y="520.0" />
+      <point x="0.0" y="188.5" />
+    </edge>
+    <edge source="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.favourite_cars" target="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cars" relationship="REFERENCES">
+      <point x="47.75" y="-68.5" />
+      <point x="557.3069672131145" y="125.03114754098362" />
+      <point x="557.3069672131145" y="713.1000000000003" />
+      <point x="492.41065573770493" y="713.1000000000003" />
+      <point x="0.0" y="293.5" />
+    </edge>
+    <edge source="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cars" target="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.makers" relationship="REFERENCES">
+      <point x="18.41666666666667" y="-293.5" />
+      <point x="510.8273224043716" y="1149.0131147540983" />
+      <point x="691.7979508196722" y="1149.0131147540983" />
+      <point x="0.0" y="53.5" />
+    </edge>
+    <edge source="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cars" target="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cities" relationship="REFERENCES">
+      <point x="92.08333333333333" y="-293.5" />
+      <point x="584.4939890710383" y="415.5163934426229" />
+      <point x="1008.560655737705" y="415.5163934426229" />
+      <point x="1008.560655737705" y="529.6836065573771" />
+      <point x="0.0" y="68.5" />
+    </edge>
+    <edge source="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cars" target="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.fuel_types" relationship="REFERENCES">
+      <point x="55.25" y="-293.5" />
+      <point x="547.6606557377049" y="947.6721311475408" />
+      <point x="1342.5229508196724" y="947.6721311475408" />
+      <point x="0.0" y="53.5" />
+    </edge>
+    <edge source="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.models" target="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.makers" relationship="REFERENCES">
+      <point x="0.0" y="-68.5" />
+      <point x="987.1606557377052" y="1341.6393442622953" />
+      <point x="691.7979508196722" y="1341.6393442622953" />
+      <point x="0.0" y="53.5" />
+    </edge>
+    <edge source="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.car_images" target="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cars" relationship="REFERENCES">
+      <point x="0.0" y="-83.5" />
+      <point x="442.8663934426228" y="1525.4967213114755" />
+      <point x="492.41065573770493" y="1525.4967213114755" />
+      <point x="0.0" y="293.5" />
+    </edge>
+    <edge source="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.cars" target="a92b03e4-d9db-44ce-a8a2-9d87006dfa47.TABLE:main.models" relationship="REFERENCES">
+      <point x="-18.416666666666657" y="-293.5" />
+      <point x="473.9939890710383" y="1104.6885245901642" />
+      <point x="987.1606557377052" y="1104.6885245901642" />
+      <point x="0.0" y="68.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.4642313546423135" showDependencies="false" x="996.7131147540983" y="959.3786885245902" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+
