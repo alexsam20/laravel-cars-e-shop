@@ -17,7 +17,7 @@ class CarController extends Controller
             ->cars()
             ->with(['primaryImage', 'maker', 'model'])
             ->orderBy('created_at', 'desc')
-            ->paginate(15);
+            ->simplePaginate(15);
         return view('car.index', compact('cars'));
     }
 

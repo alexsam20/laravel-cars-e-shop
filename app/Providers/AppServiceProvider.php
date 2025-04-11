@@ -22,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::defaultView('pagination');
+//        Paginator::defaultSimpleView('pagination-simple');
         View::share('year', date('Y'));
     }
 }
