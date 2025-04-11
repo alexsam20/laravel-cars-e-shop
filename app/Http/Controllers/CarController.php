@@ -13,7 +13,6 @@ class CarController extends Controller
      */
     public function index(Request $request)
     {
-//        dd($request, request());
         $cars = User::find(1)
             ->cars()
             ->with(['primaryImage', 'maker', 'model'])
