@@ -71,11 +71,22 @@ class CarController extends Controller
 
     public function search()
     {
-        $query = Car::where('published_at', '<', now())
+        $query = Car::select('cars.*')->where('published_at', '<', now())
             ->with(['primaryImage', 'city', 'carType', 'fuelType', 'maker', 'model'])
             ->orderBy('published_at', 'desc');
+
+        $query->leftJoin('cities', 'cities.id', '=', 'cars.city_id')
+            ->join('car_types', 'car_types.id', '=', 'cars.car_type_id')
+            ->where('cities.state_id', 5)
+            ->where('car_types.name', 'Sedan');
+
+//        $query->select('cars.*', 'cities.name as city_name');
+
         $carCount = $query->count();
+
         $cars = $query->limit(30)->get();
+
+//        dd($cars[0]);
 
         return view('car.search', compact('cars', 'carCount'));
     }
